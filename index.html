@@ -11,7 +11,15 @@
 <section class="seccion">
     <div class="contenedor">
 
-        <h2 class="titulo">Un poco de mi vida</h2>
+        <div class="titulo-fila">
+            <h2 class="titulo">Un poco de mi vida</h2>
+
+            <!-- Burbuja con tu foto: cambia img/yo.jpg por tu imagen -->
+            <div class="burbuja">
+                <span class="burbuja-vacia">🙂</span>
+                <img src="img/yo.jpg" alt="Foto mía" onerror="this.style.display='none'">
+            </div>
+        </div>
 
         <p class="intro">
             No todo en mi vida son líneas de código, arquitecturas y diagramas. Fuera de la pantalla cultivo pasiones que me mantienen creativo, equilibrado y conectado con lo que realmente importa.
@@ -19,49 +27,49 @@
 
         <div class="tarjetas">
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta1.jpg">
                 <div class="tarjeta-icono">🍽️</div>
                 <h3 class="tarjeta-titulo">Cocina &amp; Coctelería</h3>
                 <p class="tarjeta-texto">Explorar sabores del mundo, preparar platos gourmet y mezclar cócteles creativos —muy parecido a diseñar un buen sistema, pero comestible.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta2.jpg">
                 <div class="tarjeta-icono">🚴‍♂️</div>
                 <h3 class="tarjeta-titulo">Rutas sobre dos ruedas</h3>
                 <p class="tarjeta-texto">Recorrer caminos, descubrir lugares especiales y reconectar conmigo mismo mientras pedaleo.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta3.jpg">
                 <div class="tarjeta-icono">🎸</div>
                 <h3 class="tarjeta-titulo">Música que libera</h3>
                 <p class="tarjeta-texto">Tocar guitarra y bajo es mi válvula de escape creativa. La música me enseña ritmo, constancia y armonía.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta4.jpg">
                 <div class="tarjeta-icono">🎮</div>
                 <h3 class="tarjeta-titulo">Gaming &amp; Anime</h3>
                 <p class="tarjeta-texto">League of Legends (soy manco, pero feliz) y series anime como One Piece. Historias épicas y mundos complejos: pura inspiración.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta5.jpg">
                 <div class="tarjeta-icono">📖</div>
                 <h3 class="tarjeta-titulo">Fe y propósito</h3>
                 <p class="tarjeta-texto">La cristiandad y la lectura de las escrituras me ayudan a mantener valores claros, propósito y una perspectiva más profunda.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta6.jpg">
                 <div class="tarjeta-icono">🐕</div>
                 <h3 class="tarjeta-titulo">Aventuras con mi perro</h3>
                 <p class="tarjeta-texto">Paseos, juegos y caminatas largas son parte de mi rutina para mantener el equilibrio físico y mental.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta7.jpg">
                 <div class="tarjeta-icono">👨‍👩‍👧</div>
                 <h3 class="tarjeta-titulo">Tiempo de calidad</h3>
                 <p class="tarjeta-texto">Momentos compartidos con mi familia. El verdadero éxito se mide en relaciones sanas y tiempo bien vivido.</p>
             </div>
 
-            <div class="tarjeta">
+            <div class="tarjeta" data-hover-image="img/tarjeta8.jpg">
                 <div class="tarjeta-icono">❤️</div>
                 <h3 class="tarjeta-titulo">Balance y bienestar</h3>
                 <p class="tarjeta-texto">Después de un día intenso de código: salir a caminar, entrenar, jugar o simplemente respirar. El balance es clave.</p>
@@ -75,6 +83,55 @@
 
     </div>
 </section>
+
+<!-- Círculo con imagen que sigue al cursor sobre las tarjetas -->
+<div class="circulo-hover" id="circulo-hover">
+    <div class="circulo-hover-interior">
+        <span class="circulo-hover-vacio">🖼️</span>
+        <img id="circulo-hover-img" src="" alt="">
+    </div>
+</div>
+
+<script>
+    const circulo = document.getElementById('circulo-hover');
+    const imagen = document.getElementById('circulo-hover-img');
+    const tarjetas = document.querySelectorAll('[data-hover-image]');
+
+    let x = 0, y = 0;      // posición actual del círculo
+    let objetivoX = 0, objetivoY = 0;  // posición del cursor
+
+    tarjetas.forEach(tarjeta => {
+        tarjeta.addEventListener('mouseenter', () => {
+            imagen.style.display = '';
+            imagen.src = tarjeta.dataset.hoverImage;
+            circulo.classList.add('activo');
+        });
+
+        tarjeta.addEventListener('mouseleave', () => {
+            circulo.classList.remove('activo');
+        });
+    });
+
+    // Si la imagen no existe, se muestra el icono de reemplazo
+    imagen.addEventListener('error', () => {
+        imagen.style.display = 'none';
+    });
+
+    document.addEventListener('mousemove', e => {
+        objetivoX = e.clientX;
+        objetivoY = e.clientY;
+    });
+
+    // Movimiento suave detrás del cursor
+    function seguir() {
+        x += (objetivoX - x) * 0.15;
+        y += (objetivoY - y) * 0.15;
+        circulo.style.left = x + 'px';
+        circulo.style.top = y + 'px';
+        requestAnimationFrame(seguir);
+    }
+    seguir();
+</script>
 
 </body>
 </html>
