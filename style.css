@@ -1,0 +1,199 @@
+/* ===== COLORES (cámbialos aquí) ===== */
+:root {
+    --fondo-1: #0f1115;
+    --fondo-2: #1a1d23;
+    --fondo-tarjeta: rgba(30, 34, 41, 0.85);
+    --borde: #2d323b;
+    --texto: #e7e5e4;
+    --texto-suave: #a8a29e;
+    --acento-1: #64748b;   /* gris azulado */
+    --acento-2: #94a3b8;   /* gris azulado claro */
+    --icono-1: #78716c;    /* piedra */
+    --icono-2: #44403c;    /* piedra oscuro */
+}
+
+/* ===== BASE ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--fondo-1);
+    color: var(--texto);
+    text-align: center;
+}
+
+h2, h3 {
+    color: #fff;
+}
+
+/* ===== SECCIÓN ===== */
+.seccion {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 24px;
+    background: linear-gradient(to bottom, var(--fondo-1), var(--fondo-2));
+}
+
+/* Luces suaves de fondo */
+.seccion::before,
+.seccion::after {
+    content: "";
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.18;
+    pointer-events: none;
+    animation: flotar 8s ease-in-out infinite;
+}
+
+.seccion::before {
+    top: 40px;
+    right: 8%;
+    background: var(--acento-1);
+}
+
+.seccion::after {
+    bottom: 40px;
+    left: 8%;
+    background: var(--acento-2);
+    animation-delay: 2s;
+}
+
+.contenedor {
+    position: relative;
+    z-index: 1;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: clamp(2.2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, var(--acento-2), #fff, var(--acento-1));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: aparecer 0.8s ease both;
+}
+
+.intro {
+    max-width: 700px;
+    margin: 0 auto 48px;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: var(--texto-suave);
+    animation: aparecer 0.8s ease 0.15s both;
+}
+
+/* ===== TARJETAS ===== */
+.tarjetas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.tarjeta {
+    background: var(--fondo-tarjeta);
+    backdrop-filter: blur(12px);
+    border: 1px solid var(--borde);
+    border-radius: 16px;
+    padding: 28px 24px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    animation: aparecer 0.7s ease both;
+}
+
+/* Aparición escalonada */
+.tarjeta:nth-child(1) { animation-delay: 0.2s; }
+.tarjeta:nth-child(2) { animation-delay: 0.3s; }
+.tarjeta:nth-child(3) { animation-delay: 0.4s; }
+.tarjeta:nth-child(4) { animation-delay: 0.5s; }
+.tarjeta:nth-child(5) { animation-delay: 0.6s; }
+.tarjeta:nth-child(6) { animation-delay: 0.7s; }
+.tarjeta:nth-child(7) { animation-delay: 0.8s; }
+.tarjeta:nth-child(8) { animation-delay: 0.9s; }
+
+.tarjeta:hover {
+    transform: translateY(-6px);
+    border-color: var(--acento-1);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+}
+
+.tarjeta-icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    margin: 0 auto 14px;
+    border-radius: 14px;
+    background: linear-gradient(to bottom right, var(--icono-1), var(--icono-2));
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+    font-size: 28px;
+    transition: transform 0.3s ease;
+}
+
+.tarjeta:hover .tarjeta-icono {
+    transform: scale(1.1) rotate(-4deg);
+}
+
+.tarjeta-titulo {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.tarjeta-texto {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--texto-suave);
+}
+
+/* ===== CITA ===== */
+.cita {
+    max-width: 700px;
+    margin: 56px auto 0;
+    padding: 24px;
+    border-top: 2px solid var(--acento-1);
+    border-bottom: 2px solid var(--acento-1);
+    font-size: 1.15rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.7;
+    color: var(--texto);
+    animation: aparecer 0.8s ease 1s both;
+}
+
+/* ===== ANIMACIONES ===== */
+@keyframes aparecer {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes flotar {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-24px); }
+}
+
+/* Respeta a quien desactiva animaciones en su sistema */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ===== MÓVIL ===== */
+@media (max-width: 700px) {
+    .tarjetas {
+        grid-template-columns: 1fr;
+    }
+}
