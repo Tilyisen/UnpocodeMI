@@ -8,128 +8,171 @@
 </head>
 <body>
 
-<section class="seccion">
+<!-- Sección: Más allá del código -->
+<section class="vida">
+
+    <div class="vida-overlay"></div>
+
+    <!-- Elementos flotantes de fondo con parallax -->
+    <div class="vida-fondo">
+        <div class="blob blob-azul" data-speed="0.3"></div>
+        <div class="blob blob-cian" data-speed="0.5"></div>
+        <div class="blob blob-verde" data-speed="0.4"></div>
+    </div>
+
     <div class="contenedor">
+        <div class="vida-grid">
 
-        <div class="titulo-fila">
-            <h2 class="titulo">Un poco de MI</h2>
+            <!-- Columna izquierda: contenido -->
+            <div class="vida-contenido">
 
-            <!-- Burbuja con tu foto: cambia img/yo.jpg por tu imagen -->
-            <div class="burbuja">
-                <span class="burbuja-vacia">🙂</span>
-                <img src="img/yo.jpg" alt="Foto mía" onerror="this.style.display='none'">
+                <!-- Badge -->
+                <div class="badge">
+                    <span>🐾</span>
+                    <span>HABLEMOS - MÁS ALLÁ DEL CÓDIGO</span>
+                </div>
+
+                <h2 class="titulo">
+                    <span class="titulo-degradado">Un poco de</span>
+                    <span>mi vida</span>
+                </h2>
+
+                <p class="intro">
+                    Esta es mi vida mas alla de codigo, donde comparto todo lo que hace parte de mi y me hace feliz.
+                </p>
+
+                <!-- Hobbies cards -->
+                <div class="tarjetas">
+
+                    <div class="tarjeta" data-hover-image="img/WOS.jpg">
+                        <div class="tarjeta-cabecera">
+                            <div class="tarjeta-icono">🎶</div>
+                            <h3 class="tarjeta-titulo">Musica</h3>
+                        </div>
+                        <p class="tarjeta-texto">Me encanta escuchar musica en especial analizar cada instrumento y separarlo mentalmente. Disfruto todo tipo de genero.</p>
+                    </div>
+
+                    <div class="tarjeta" data-hover-image="img/WOW.jpg">
+                        <div class="tarjeta-cabecera">
+                            <div class="tarjeta-icono">🕹️</div>
+                            <h3 class="tarjeta-titulo">Gaming</h3>
+                        </div>
+                        <p class="tarjeta-texto">Durante toda mi vida he jugado videojuegos en especial WoW, LOL y otros no me considero el mejor pero si mejor que muchos.</p>
+                    </div>
+
+                    <div class="tarjeta" data-hover-image="img/friends.jpg">
+                        <div class="tarjeta-cabecera">
+                            <div class="tarjeta-icono">🫂</div>
+                            <h3 class="tarjeta-titulo">Amigos</h3>
+                        </div>
+                        <p class="tarjeta-texto">Suelo pasar mucho tiempo saliendo con mis amigos pasar tiempo con ellos realmente me hace sentir tranquilo y pasar buenos momentos </p>
+                    </div>
+
+                    <div class="tarjeta" data-hover-image="img/skate.jpg">
+                        <div class="tarjeta-cabecera">
+                            <div class="tarjeta-icono">🛹</div>
+                            <h3 class="tarjeta-titulo">Skate</h3>
+                        </div>
+                        <p class="tarjeta-texto">Desde que estaba en 6 grado comence a aprender a montar y es una de las mejores experiencias de mi vida.</p>
+                    </div>
+
+                    <div class="tarjeta" data-hover-image="img/burge.jpg">
+                        <div class="tarjeta-cabecera">
+                            <div class="tarjeta-icono">🍔</div>
+                            <h3 class="tarjeta-titulo">Comida</h3>
+                        </div>
+                        <p class="tarjeta-texto">Amo todo tipo de comida salir y comer es lo mejorq que existe en especial una buena hamburguesa bien grasuda .</p>
+                    </div>
+
+                    <div class="tarjeta" data-hover-image="img/inem.jpg">
+                        <div class="tarjeta-cabecera">
+                            <div class="tarjeta-icono">🌿</div>
+                            <h3 class="tarjeta-titulo">Naturaleza</h3>
+                        </div>
+                        <p class="tarjeta-texto">Amor la tranquilidad que las zonas verder dan es un espacio de paz para mi y aprecio los lugares que son hermosos.</p>
+                    </div>
+                </div>
+
+                <!-- Quote -->
+                <blockquote class="cita">
+                    "Trata a todos con amor, no se sabe quién ha pasado un día malo"
+                </blockquote>
+
             </div>
+
+            <!-- Columna derecha: foto principal -->
+            <div class="vida-visual">
+                <div class="foto" data-speed="0.3">
+
+                    <!-- Degradado radial de fondo -->
+                    <div class="foto-luz"></div>
+
+                    <div class="foto-marco">
+                        <!-- Cambia img/foto.jpg por tu imagen -->
+                        <span class="foto-vacio">🖼️</span>
+                        <img src="img/yo.jpg" alt="Mi foto" class="foto-img" onerror="this.style.display='none'">
+                    </div>
+
+                </div>
+            </div>
+
         </div>
-
-        <p class="intro">
-            Soy juan
-
-        <div class="tarjetas">
-
-            <div class="tarjeta" data-hover-image="img/tarjeta1.jpg">
-                <div class="tarjeta-icono">🎮</div>
-                <h3 class="tarjeta-titulo">Videojuegos </h3>
-                <p class="tarjeta-texto">.</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta2.jpg">
-                <div class="tarjeta-icono"></div>
-                <h3 class="tarjeta-titulo">.</h3>
-                <p class="tarjeta-texto">.</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta3.jpg">
-                <div class="tarjeta-icono">🎶</div>
-                <h3 class="tarjeta-titulo">Música</h3>
-                <p class="tarjeta-texto">se tocar guitarra acustica y lo que mas me gusta es analizar musica de cualquier genero y hacer un ejericio mental de separar cada instrumento</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta4.jpg">
-                <div class="tarjeta-icono">.</div>
-                <h3 class="tarjeta-titulo">.</h3>
-                <p class="tarjeta-texto">.</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta5.jpg">
-                <div class="tarjeta-icono">📖</div>
-                <h3 class="tarjeta-titulo">Fe y propósito</h3>
-                <p class="tarjeta-texto">La cristiandad y la lectura de las escrituras me ayudan a mantener valores claros, propósito y una perspectiva más profunda.</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta6.jpg">
-                <div class="tarjeta-icono">🐕</div>
-                <h3 class="tarjeta-titulo">Aventuras con mi perro</h3>
-                <p class="tarjeta-texto">Paseos, juegos y caminatas largas son parte de mi rutina para mantener el equilibrio físico y mental.</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta7.jpg">
-                <div class="tarjeta-icono">👨‍👩‍👧</div>
-                <h3 class="tarjeta-titulo">Tiempo de calidad</h3>
-                <p class="tarjeta-texto">Momentos compartidos con mi familia. El verdadero éxito se mide en relaciones sanas y tiempo bien vivido.</p>
-            </div>
-
-            <div class="tarjeta" data-hover-image="img/tarjeta8.jpg">
-                <div class="tarjeta-icono">❤️</div>
-                <h3 class="tarjeta-titulo">Balance y bienestar</h3>
-                <p class="tarjeta-texto">Después de un día intenso de código: salir a caminar, entrenar, jugar o simplemente respirar. El balance es clave.</p>
-            </div>
-
-        </div>
-
-        <p class="cita">
-            "Un buen desarrollador sabe cuándo desconectar. Un gran desarrollador tiene un compañero —humano o peludo— que se lo recuerda todos los días."
-        </p>
-
     </div>
 </section>
 
-<!-- Círculo con imagen que sigue al cursor sobre las tarjetas -->
+<!-- Círculo con imagen que sigue al cursor -->
 <div class="circulo-hover" id="circulo-hover">
     <div class="circulo-hover-interior">
-        <span class="circulo-hover-vacio">🖼️</span>
+        <span>🖼️</span>
         <img id="circulo-hover-img" src="" alt="">
     </div>
 </div>
 
 <script>
+    // ===== Círculo con imagen al pasar el cursor =====
     const circulo = document.getElementById('circulo-hover');
     const imagen = document.getElementById('circulo-hover-img');
-    const tarjetas = document.querySelectorAll('[data-hover-image]');
+    let x = 0, y = 0, objetivoX = 0, objetivoY = 0;
 
-    let x = 0, y = 0;      // posición actual del círculo
-    let objetivoX = 0, objetivoY = 0;  // posición del cursor
-
-    tarjetas.forEach(tarjeta => {
-        tarjeta.addEventListener('mouseenter', () => {
+    document.querySelectorAll('[data-hover-image]').forEach(el => {
+        el.addEventListener('mouseenter', () => {
             imagen.style.display = '';
-            imagen.src = tarjeta.dataset.hoverImage;
+            imagen.src = el.dataset.hoverImage;
             circulo.classList.add('activo');
         });
-
-        tarjeta.addEventListener('mouseleave', () => {
-            circulo.classList.remove('activo');
-        });
+        el.addEventListener('mouseleave', () => circulo.classList.remove('activo'));
     });
 
-    // Si la imagen no existe, se muestra el icono de reemplazo
-    imagen.addEventListener('error', () => {
-        imagen.style.display = 'none';
-    });
+    imagen.addEventListener('error', () => { imagen.style.display = 'none'; });
 
     document.addEventListener('mousemove', e => {
         objetivoX = e.clientX;
         objetivoY = e.clientY;
     });
 
-    // Movimiento suave detrás del cursor
-    function seguir() {
+    (function seguir() {
         x += (objetivoX - x) * 0.15;
         y += (objetivoY - y) * 0.15;
         circulo.style.left = x + 'px';
         circulo.style.top = y + 'px';
         requestAnimationFrame(seguir);
+    })();
+
+    // ===== Parallax al hacer scroll =====
+    const seccion = document.querySelector('.vida');
+    const conSpeed = seccion.querySelectorAll('[data-speed]');
+
+    function parallax() {
+        const r = seccion.getBoundingClientRect();
+        const centro = r.top + r.height / 2 - window.innerHeight / 2;
+        conSpeed.forEach(el => {
+            const speed = parseFloat(el.dataset.speed) || 0;
+            el.style.translate = '0 ' + (centro * speed * -0.2) + 'px';
+        });
     }
-    seguir();
+    window.addEventListener('scroll', parallax, { passive: true });
+    window.addEventListener('resize', parallax);
+    parallax();
 </script>
 
 </body>
